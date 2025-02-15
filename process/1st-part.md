@@ -332,4 +332,9 @@ https://www.google.com/recaptcha/api/siteverify eikahne ekta post request sent k
 services--> AuthService---> index e ekta api create kori
 
 
+<!-- admin panel -->
+
+https://www.google.com/recaptcha/admin/
+
+
 
