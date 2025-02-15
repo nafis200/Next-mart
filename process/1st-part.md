@@ -126,9 +126,67 @@ Register er kaj korbo
 
 RegisterForm create.
 
+# first docs porbo
+
+
+"use client"
+
+import { zodResolver } from "@hookform/resolvers/zod"
+import { useForm } from "react-hook-form"
+import { z } from "zod"
+
+import { Button } from "@/components/ui/button"
+import {
+  Form,
+  FormControl,
+  FormDescription,
+  FormField,
+  FormItem,
+  FormLabel,
+  FormMessage,
+} from "@/components/ui/form"
+import { Input } from "@/components/ui/input"
+
+const formSchema = z.object({
+  username: z.string().min(2, {
+    message: "Username must be at least 2 characters.",
+  }),
+})
+
+export function ProfileForm() {
+  // ...
+
+  return (
+    <Form {...form}>
+      <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-8">
+        <FormField
+          control={form.control}
+          name="username"
+          render={({ field }) => (
+            <FormItem>
+              <FormLabel>Username</FormLabel>
+              <FormControl>
+                <Input placeholder="shadcn" {...field} />
+              </FormControl>
+              <FormDescription>
+                This is your public display name.
+              </FormDescription>
+              <FormMessage />
+            </FormItem>
+          )}
+        />
+        <Button type="submit">Submit</Button>
+      </form>
+    </Form>
+  )
+}
+
+form message lagbe for shown error message
+
+
 shadcn form by default react hook form use kore
 
-components --> auth --> register --> registerForm.tsx
+components -->modules --> auth --> register --> registerForm.tsx
 
 install form components
 
@@ -198,8 +256,37 @@ getCurrentUser must be call from server components
 
 # context api create
 
-src---> context
+src---> context ---> userContext
 
+<!-- 2nd time  write -->
+
+ 
+const UserContext = createContext(undefined);
+
+import this
+
+create wrapper components
+
+ <UserContext.Provider value={{ user, setUser, isLoading, setIsLoading }}>
+      {children}
+    </UserContext.Provider>
+
+pass the value along to object
+
+wrap provider userProvider not useContext
+
+not wrap provider root
+
+now create useUser()
+
+useUser er all information peye jabo
+
+
+now add it home
+
+
+
+<!--  -->
 
 Create Context and Provider
 
@@ -238,7 +325,7 @@ and Security preference
 
 work at verification.
 
-google recaptha for verification
+<!-- google recaptha for verification -->
 
 https://www.google.com/recaptcha/api/siteverify eikahne ekta post request sent kori.
 

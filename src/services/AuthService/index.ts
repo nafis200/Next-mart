@@ -12,6 +12,7 @@ export const registerUser = async (userData: FieldValues) => {
       headers: {
         "Content-Type": "application/json",
       },
+      
       body: JSON.stringify(userData),
     });
     const result = await res.json();
