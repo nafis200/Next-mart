@@ -10,6 +10,10 @@ const roleBasedPrivateRoutes = {
   admin: [/^\/admin/],
 };
 
+// same user/create 
+
+// user/update user thakte hobe
+
 export const middleware = async (request: NextRequest) => {
 
   // console.log("hellow")

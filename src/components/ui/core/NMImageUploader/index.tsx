@@ -23,11 +23,13 @@ const NMImageUploader = ({
 
     if (file) {
       const reader = new FileReader();
+    //  first work it
 
+    // 3rd work it
       reader.onloadend = () => {
         setImagePreview((prev) => [...prev, reader.result as string]);
       };
-
+      //  2nd work it
       reader.readAsDataURL(file);
     }
 

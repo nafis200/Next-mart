@@ -1,7 +1,11 @@
 
 <!-- error solve first part-->
 
-first go tom auth services and option chain give
+<!-- 2nd time -->
+  Navbar e again kaj korchi
+<!--  -->
+
+first go to auth services and option chain give
 
 and now work at navbar.
 
@@ -11,7 +15,7 @@ Add avatar at navbar
 
 repace button with avatar at navbar.
 
-implement logout function
+<!-- implement logout function -->
 
 
 AuthServices-->index.ts e logout make kori.
@@ -32,6 +36,7 @@ Createshop ---> make from
 
 components--->modules-->shop--->create-shop.
 
+<!-- Create shop form e onek function acche -->
 
 postman theke createShop sent korte hobe.
 
@@ -46,12 +51,17 @@ ui -----> core --> NMImageUpload
 
 index.tsx work 
 
-import imageUploader
+<!-- import imageUploader -->
 
 <Input> image er kaj korchi
 
 
-shown preview we create a state.
+<!-- shown preview we create a state. -->
+
+components--> ui ---> core ---> NMImageUploader ---> ImagePreviwer.tsx
+
+<!--  -->
+
 
 Work as fileReader
 
@@ -59,8 +69,11 @@ ei method er kaj holo se file ke read kore dataupload korar por link e convert k
 
 so data url e convert korte hobe..
 
+const reader = new FileReader();	ফাইল পড়ার জন্য FileReader API তৈরি করা হচ্ছে
+3️⃣	reader.readAsDataURL(file);	ফাইলটিকে Base64 Data URL এ কনভার্ট করার প্রসেস শুরু
+4️⃣	reader.onloadend = () => { ... }
 
-reusable components.
+<!-- reusable components. -->
 
 CreateShopForm e kaj kori. and declared components
 
@@ -87,6 +100,7 @@ services ---> shop ---> index.ts e kaj korbo.
 
 createShopform e call kori.
 
+<!-- where he sent token from header -->
 
 <!-- Secure Routes With Middleware -->
 
@@ -95,6 +109,14 @@ createShopform e call kori.
 One route theke another route e hit korle middleware.
 
 src----> middleware 
+
+<!--  -->
+ 
+ config matcher er route e gele middleware trigger hobe.
+
+ stop kore dile pathName ta catch korbo then login korle sent kore dibo
+
+<!--  -->
 
 and function name must be middleware
 
@@ -109,8 +131,18 @@ login Successfull hole redirrect kore patiye daw.
 
 LOgin page e kaj ache.
 
+  const searchParams = useSearchParams();
+  const redirect = searchParams.get("redirectPath");
+  const router = useRouter();
 
+  <!-- ........... -->
 <!-- Add dashboard Layout -->
+
+<!--  -->
+
+use client er jonno path name ek ar server er jonno arek
+
+<!--  -->
 
 before issue solve
 
@@ -144,7 +176,7 @@ nav-main.tsx
 
 nav-user.tsx.
 
-dashboard er layput e kaj kori.
+dashboard er layout e kaj kori.
 
 
 nav-user logout functionallity add kori.
