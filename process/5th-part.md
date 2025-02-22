@@ -302,5 +302,9 @@ Handling Order and Payament
 
 payment Details e kaj kori
 
+Clear the Cart after Payment Add.
+
+Backend e success and error page add korte hobe.
+
 
 
