@@ -1,6 +1,8 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 "use server";
 
-import { IOrder } from "@/types/cart";
+
+import type { IOrder } from "@/types/cart";
 import { cookies } from "next/headers";
 
 export const createOrder = async (order: IOrder) => {
