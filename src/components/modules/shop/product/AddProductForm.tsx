@@ -122,6 +122,10 @@ export default function AddProductsForm() {
         (specification[item.key] = item.value)
     );
 
+    // {
+    //   name:"nafis"
+    // }
+
     // console.log({ availableColors, keyFeatures, specification });
 
     const modifiedData = {

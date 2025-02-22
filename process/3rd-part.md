@@ -25,6 +25,7 @@ WithDashboardLayout ---> user ---> shop -->products ---> addProducts
 e form ache ekta.
 
 <!-- eikahne mutliple image add kora jabe -->
+41.2
 
 dynamically input add hocche. add-product --> page.tsx e .
 

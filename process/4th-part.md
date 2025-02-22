@@ -146,6 +146,8 @@ router.push(`${pathname}?page=${index + 1}`);
 ei kaj ta hobe.
 
 
+
+
 postman e get All Product e giye meta pacchi.
 
 Now dynamically pagination add and limit add and sent data backend.
