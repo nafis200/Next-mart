@@ -1,25 +1,27 @@
+/* eslint-disable @typescript-eslint/no-unused-vars */
 import { ArrowLeft, ArrowRight } from "lucide-react";
 import { Button } from "../../button";
-import { useState } from "react";
+import { useState} from "react";
 import { usePathname, useRouter } from "next/navigation";
 
-const TablePagination = ({ totalPage }: { totalPage: number }) => {
-  const [currentPage, setCurrentPage] = useState(1);
-  //   console.log(currentPage);
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
+const TablePagination = ({ currentPage, totalPage,onPageChange }: { currentPage?:number, totalPage: number,onPageChange?:any}) => {
+  const [currentPages, setCurrentPages] = useState(1);
+  //   console.log(currentPages);
   const router = useRouter();
   const pathname = usePathname();
 
   const handlePrev = () => {
-    if (currentPage > 1) {
-      setCurrentPage(currentPage - 1);
-      router.push(`${pathname}?page=${currentPage - 1}`);
+    if (currentPages > 1) {
+      setCurrentPages(currentPages - 1);
+      router.push(`${pathname}?page=${currentPages - 1}`);
     }
   };
 
   const handleNext = () => {
-    if (currentPage < totalPage) {
-      setCurrentPage(currentPage + 1);
-      router.push(`${pathname}?page=${currentPage + 1}`);
+    if (currentPages < totalPage) {
+      setCurrentPages(currentPages + 1);
+      router.push(`${pathname}?page=${currentPages + 1}`);
     }
   };
 
@@ -27,7 +29,7 @@ const TablePagination = ({ totalPage }: { totalPage: number }) => {
     <div className="flex items-center gap-2 my-5">
       <Button
         onClick={handlePrev}
-        disabled={currentPage === 1}
+        disabled={currentPages === 1}
         variant="outline"
         size="sm"
         className="w-8 h-8 rounded-full flex items-center justify-center"
@@ -37,11 +39,11 @@ const TablePagination = ({ totalPage }: { totalPage: number }) => {
       {[...Array(totalPage)].map((_, index) => (
         <Button
           onClick={() => {
-            setCurrentPage(index + 1);
+            setCurrentPages(index + 1);
             router.push(`${pathname}?page=${index + 1}`);
           }}
           key={index}
-          variant={currentPage === index + 1 ? "default" : "outline"}
+          variant={currentPages === index + 1 ? "default" : "outline"}
           size="sm"
           className="w-8 h-8 rounded-full flex items-center justify-center"
         >
@@ -50,7 +52,7 @@ const TablePagination = ({ totalPage }: { totalPage: number }) => {
       ))}
       <Button
         onClick={handleNext}
-        disabled={currentPage === totalPage}
+        disabled={currentPages === totalPage}
         variant="outline"
         size="sm"
         className="w-8 h-8 rounded-full flex items-center justify-center"

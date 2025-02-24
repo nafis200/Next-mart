@@ -1,16 +1,22 @@
-// import AllProducts from "@/components/modules/products";
-// import ProductBanner from "@/components/modules/products/banner";
+import AllProducts from "@/components/modules/products";
+import ProductBanner from "@/components/modules/products/banner";
 import CategoryCard from "@/components/ui/core/CategoryCard";
 import NMContainer from "@/components/ui/core/NMContainer";
 import { getAllCategories } from "@/services/Category";
 import { getAllProducts } from "@/services/Product";
 import { ICategory } from "@/types";
-import ProductBanner from './../../../components/modules/products/banner/index';
-import AllProducts from './../../../components/modules/products/index';
 
-const AllProductsPage = async () => {
+type SearchParams = Promise<{ [key: string]: string | string[] | undefined }>;
+
+const AllProductsPage = async ({
+  searchParams,
+}: {
+  searchParams: SearchParams;
+}) => {
+  const query = await searchParams;
+
   const { data: categories } = await getAllCategories();
-  const { data: products } = await getAllProducts();
+  const { data: products } = await getAllProducts(undefined, undefined, query);
 
   return (
     <NMContainer>
